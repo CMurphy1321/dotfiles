@@ -1,0 +1,14 @@
+Instructions to install YouCompleteMe
+
+vim 7.3.584 or later, python support
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
+
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+                                ARCH
+./install.sh --clang-completer (--system-libclang)
+vim +PluginInstall +qall (or :PluginInstall from vim)
