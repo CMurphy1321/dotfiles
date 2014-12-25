@@ -26,7 +26,7 @@ command! Q q
 command! Wq wq
 
 syntax on
-" set autoindent
+"set autoindent
 set smartindent
 set smartcase
 set ic
@@ -35,6 +35,7 @@ set incsearch
 set hlsearch
 set wildignorecase
 
+"Keep current buffer at the top for sp, left for vsp
 set splitbelow
 set splitright
 
