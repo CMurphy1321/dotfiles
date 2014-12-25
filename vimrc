@@ -1,5 +1,6 @@
 set nocompatible
 let mapleader=","
+let maplocalleader=","
 filetype plugin indent on
 execute pathogen#infect()
 
