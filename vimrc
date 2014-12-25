@@ -43,9 +43,71 @@ set t_Co=256
 set background=dark
 colorscheme mustang
 
-"highlight trailing whitespace and whitespace before tab
-highlight ExtraWhitespace ctermbg=white guibg=white
-autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
+"Toggle Trailing Whitespace Highlighting
+map <Leader>w :ToggleSpaceHi<CR>
+if !exists("g:spacehi_spacecolor")
+    let g:spacehi_spacecolor="ctermbg=white guibg=white"
+endif
+
+function! s:SpaceHi()
+    syntax match spacehiTrailingSpace /\s\+$/ containedin=ALL
+    execute("highlight spacehiTrailingSpace " . g:spacehi_spacecolor)
+
+    let b:spacehi = 1
+endfunction
+
+function! s:NoSpaceHi()
+    syntax clear spacehiTrailingSpace
+    let b:spacehi = 0
+endfunction
+
+function! s:ToggleSpaceHi()
+    if exists("b:spacehi") && b:spacehi
+        call s:NoSpaceHi()
+        echo ""
+    else
+        call s:SpaceHi()
+        echo ""
+    endif
+endfunction
+
+com! SpaceHi call s:SpaceHi()
+com! NoSpaceHi call s:NoSpaceHi()
+com! ToggleSpaceHi call s:ToggleSpaceHi()
+
+"Toggle Tab Highlighting
+map <Leader>t :ToggleTabHi<CR>
+if !exists("g:tabhi_color")
+    let g:tabhi_color=" ctermbg=red guibg=red"
+endif
+
+function! s:TabHi()
+    syntax match hiTab /\t/ containedin=ALL
+    execute("highlight hiTab " . g:tabhi_color)
+
+    let b:tabhi = 1
+endfunction
+
+function! s:NoTabHi()
+    syntax clear hiTab
+    let b:tabhi = 0
+endfunction
+
+function! s:ToggleTabHi()
+    if exists("b:tabhi") && b:tabhi
+        call s:NoTabHi()
+        echo ""
+    else
+        call s:TabHi()
+        echo ""
+    endif
+endfunction
+
+com! TabHi call s:TabHi()
+com! NoTabHi call s:NoTabHi()
+com! ToggleTabHi call s:ToggleTabHi()
+
+"Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<CR><C-o>
 
 nnoremap <Leader>c :exec 'set' (&colorcolumn ==# '') ? 'colorcolumn=+1' : 'colorcolumn='<CR>
