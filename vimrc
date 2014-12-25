@@ -110,8 +110,13 @@ com! ToggleTabHi call s:ToggleTabHi()
 "Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<CR><C-o>
 
-nnoremap <Leader>c :exec 'set' (&colorcolumn ==# '') ? 'colorcolumn=+1' : 'colorcolumn='<CR>
-nnoremap <Leader>l :set cursorline!<CR>
+"Toggle color column
+nnoremap <Leader>m :exec 'set' (&colorcolumn ==# '') ? 'colorcolumn=+1' : 'colorcolumn='<CR>
+
+"Toggle cursorline
+nnoremap <Leader>c :set cursorline!<CR>
+
+"Swap a line with the line below it
 nnoremap <Leader>s ddp
 nnoremap <Leader>z :set spell!<CR>
 
