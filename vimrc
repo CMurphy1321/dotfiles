@@ -122,6 +122,17 @@ nnoremap <Leader>s ddp
 "Toggle spelling
 nnoremap <Leader>z :set spell!<CR>
 
+"Align in visual
+vnoremap <Leader>te :Tab /=<CR>
+vnoremap <Leader>tc :Tab /:<CR>
+
+"Clear search highlight
+nmap <Leader>/ :nohlsearch<CR>
+
+"Allow writing even if you forgot to sudo
+cmap w!! w !sudo tee % >/dev/null
+cmap x!! x !sudo tee % >/dev/null
+
 set autochdir
 
 if filereadable(expand("$HOME/.vimrc.local"))
