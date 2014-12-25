@@ -118,6 +118,8 @@ nnoremap <Leader>c :set cursorline!<CR>
 
 "Swap a line with the line below it
 nnoremap <Leader>s ddp
+
+"Toggle spelling
 nnoremap <Leader>z :set spell!<CR>
 
 set autochdir
