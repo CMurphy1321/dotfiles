@@ -129,6 +129,8 @@ vnoremap <Leader>tc :Tab /:<CR>
 "Clear search highlight
 nmap <Leader>/ :nohlsearch<CR>
 
+nnoremap <Leader>g :GundoToggle<CR>
+
 "Allow writing even if you forgot to sudo
 cmap w!! w !sudo tee % >/dev/null
 cmap x!! x !sudo tee % >/dev/null
