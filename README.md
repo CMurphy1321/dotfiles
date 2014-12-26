@@ -12,9 +12,8 @@ I use the following steps to install YouCompleteMe. You need to compile it but
 it isn't too bad; it only takes a few minutes.
 
 cd ~/.vim/bundle/YouCompleteMe/
-git submodule update --init --recursive
-cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
-make ycm_support_libs
+git submodule add git@github.com:Valloric/YouCompleteMe.git
+./install.sh --clang-completer
 
 And that's it! If this didn't work or you would like more information go to
 https://github.com/Valloric/YouCompleteMe.
