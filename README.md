@@ -13,6 +13,7 @@ it isn't too bad; it only takes a few minutes.
 
 cd ~/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
+mkkdir ~/ycmbuild && cd ~/ycmbuild
 cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
 make ycm_support_libs
 
