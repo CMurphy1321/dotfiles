@@ -7,3 +7,6 @@
 [submodule "vim/bundle/LaTeX-Box"]
 	path = vim/bundle/LaTeX-Box
 	url = git@github.com:LaTeX-Box-Team/LaTeX-Box.git
+[submodule "vim/bundle/gundo.vim"]
+	path = vim/bundle/gundo.vim
+	url = git@github.com:sjl/gundo.vim.git
