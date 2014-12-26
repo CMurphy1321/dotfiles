@@ -16,4 +16,5 @@ git submodule update --init --recursive
 cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
 make ycm_support_libs
 
-And that's it!
+And that's it! If this didn't work or you would like more information go to
+https://github.com/Valloric/YouCompleteMe.
