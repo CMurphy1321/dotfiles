@@ -8,12 +8,14 @@ mkdir -p $backup
 for file in $dir/*
 do
     filename=$(basename $file)
-    if [[ "$filename" = "inputrc" || "$filename" = "vimrc" || "$filename" = "bashrc" || "$filename" = "vim" ]]; then
-        echo "Creating link for .$filename"
-        # Move existing dotfile to $backup
-        mv $HOME/.$filename $backup/
-        # Create symlink
-        ln -s $dir/$filename $HOME/.$filename
+    if [[ "$filename" != "$(basename $0)" ]]; then
+        if [[ "$filename" = "inputrc" || "$filename" = "vimrc" || "$filename" = "bashrc" || "$filename" = "vim" ]]; then
+            echo "Creating link for .$filename"
+            # Move existing dotfile to $backup
+            mv $HOME/.$filename $backup/
+            # Create symlink
+            ln -s $dir/$filename $HOME/.$filename
+        fi
     fi
 done
 
