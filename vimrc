@@ -126,6 +126,9 @@ nnoremap <Leader>z :set spell!<CR>
 vnoremap <Leader>te :Tab /=<CR>
 vnoremap <Leader>tc :Tab /:<CR>
 
+"Toggle rainbow parentheses
+nnoremap <Leader>r :RainbowParenthesesToggle<CR>
+
 "Clear search highlight
 nmap <Leader>/ :nohlsearch<CR>
 
@@ -140,3 +143,8 @@ set autochdir
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
 endif
+
+"Toggle all for rainbow parentheses
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
