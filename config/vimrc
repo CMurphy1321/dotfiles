@@ -46,6 +46,11 @@ set t_Co=256
 set background=dark
 colorscheme mustang
 
+if has ('macunix')
+    nnoremap yy yy"*yy
+    nnoremap y ygy"*y
+endif
+
 "Only show quickfix buffer on errors, not warnings
 let g:LatexBox_quickfix = 4
 
@@ -91,8 +96,8 @@ nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 "Clear search highlight
 nmap <Leader>/ :nohlsearch<CR>
 
-"Toggle Gundo tree
-nnoremap <Leader>g :GundoToggle<CR>
+" "Toggle Gundo tree
+" nnoremap <Leader>g :GundoToggle<CR>
 
 nnoremap <Leader>lw :w<CR> :Latexmk<CR>
 
@@ -108,6 +113,12 @@ noremap! <F1> <NOP>
 "Remap tab to change tab levels in visual mode
 vnoremap <TAB> >
 vnoremap <S-TAB> <
+
+"Make text scolling constant
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 "Allow writing even if you forgot to sudo
 cmap w!! w !sudo tee % >/dev/null
