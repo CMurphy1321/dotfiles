@@ -3,18 +3,6 @@ let mapleader=","
 let maplocalleader=","
 filetype plugin indent on
 
-"Search for selected text, forwards or backwards.
-vnoremap <silent> * :<C-U>
-    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-    \gvy/<C-R><C-R>=substitute(
-    \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-    \gV:call setreg('"', old_reg, old_regtype)<CR>
-vnoremap <silent> # :<C-U>
-    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-    \gvy?<C-R><C-R>=substitute(
-    \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-    \gV:call setreg('"', old_reg, old_regtype)<CR>
-
 execute pathogen#infect()
 
 if has('persistent_undo')
@@ -66,6 +54,13 @@ com! TabHi call s:TabHi()
 com! NoTabHi call s:NoTabHi()
 com! ToggleTabHi call s:ToggleTabHi()
 
+"fugitive shortcuts
+nnoremap <Leader>gs :Gstatus<Cr>
+nnoremap <Leader>gc :Gcommit<Cr>
+nnoremap <Leader>gd :Gdiff<Cr>
+nnoremap <Leader><Up> :Gpull<Cr>
+nnoremap <Leader><Down> :Gpush<Cr>
+
 "Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<CR><C-o>
 
@@ -107,6 +102,18 @@ endif
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+"Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+    \gvy/<C-R><C-R>=substitute(
+    \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+    \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+    \gvy?<C-R><C-R>=substitute(
+    \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+    \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 "Toggle Tab Highlighting
 map <Leader>t :ToggleTabHi<CR>
