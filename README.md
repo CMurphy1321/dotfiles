@@ -1,10 +1,11 @@
 dotfiles
 ========
 This is my repository for configuration files related to unix. My setup.sh
-script is a fairly basic one which will backup current instances of .bashrc,
-.inputrc, and .vimrc in your home folder then link the configuration files in
-this repository to the corresponding file in your home folder. This includes
-.vim which contains my vim plugins and colorschemes.
+script will backup current instances of .bashrc, .inputrc, and .vimrc in your
+home folder then link the configuration files in this repository to the
+corresponding files in your home folder. This includes .vim which contains my
+vim plugins and colorschemes. It will also compile and install YCM for you. If
+YCM does not get installed properly, please refer to below.
 
 YCM Installation
 ========

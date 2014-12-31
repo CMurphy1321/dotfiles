@@ -21,6 +21,8 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set tw=79
+set formatoptions+=w
+nnoremap Q gqip
 
 command! W w
 command! Q q
