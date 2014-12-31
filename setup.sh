@@ -10,7 +10,6 @@ do
     filename=$(basename $file)
     if [[ "$filename" != "$(basename $0)" ]]; then
         if [[ "$filename" = ".inputrc" || "$filename" = ".vimrc" || "$filename" = ".bashrc" ]]; then
-            #|| "$filename" = ".vim" ]]; then
             echo "Backing up .$filename"
             mv $HOME/$filename $backup/
         fi
@@ -22,7 +21,6 @@ do
     filename=$(basename $file)
     if [[ "$filename" != "$(basename $0)" ]]; then
         if [[ "$filename" = ".inputrc" || "$filename" = ".vimrc" || "$filename" = ".bashrc" ]]; then
-            #|| "$filename" = ".vim" ]]; then
             ln -s $dir/$filename $HOME/.$filename
         fi
     fi
