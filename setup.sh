@@ -9,8 +9,7 @@ for file in $home_dir/.*
 do
     filename=$(basename $file)
     if [[ "$filename" != "$(basename $0)" ]]; then
-        if [[ "$filename" = ".inputrc" || "$filename" = ".vimrc" || "$filename" = ".bashrc" ]]; then
-            #|| "$filename" = ".vim" ]]; then
+        if [[ "$filename" = ".inputrc" || "$filename" = ".vimrc" || "$filename" = ".bashrc" || "$filename" = ".vim" ]]; then
             echo "Backing up .$filename"
             mv $HOME/$filename $backup/
         fi
@@ -21,8 +20,8 @@ for file in $dir/*
 do
     filename=$(basename $file)
     if [[ "$filename" != "$(basename $0)" ]]; then
-        if [[ "$filename" = ".inputrc" || "$filename" = ".vimrc" || "$filename" = ".bashrc" ]]; then
-            #|| "$filename" = ".vim" ]]; then
+        if [[ "$filename" = "inputrc" || "$filename" = "vimrc" || "$filename" = "bashrc" || "$filename" = "vim" ]]; then
+            echo "Creating link for .$filename"
             ln -s $dir/$filename $HOME/.$filename
         fi
     fi
