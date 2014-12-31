@@ -29,6 +29,7 @@ done
 
 # Pull in submodules
 git submodule init && git submodule update
+cd ~/dotfiles/vim/bundle/YouCompleteMe
 git submodule update --init --recursive
 mkdir ~/ycmbuild && cd ~/ycmbuild
 cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
