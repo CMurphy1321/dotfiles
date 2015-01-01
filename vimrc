@@ -88,7 +88,10 @@ nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 "Clear search highlight
 nmap <Leader>/ :nohlsearch<CR>
 
+"Toggle Gundo tree
 nnoremap <Leader>g :GundoToggle<CR>
+
+nmap \ <Leader><Leader>
 
 "Allow writing even if you forgot to sudo
 cmap w!! w !sudo tee % >/dev/null
