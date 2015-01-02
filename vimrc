@@ -22,7 +22,7 @@ set tabstop=4
 set expandtab
 set tw=79
 set formatoptions+=w
-nnoremap Q gqip
+nnoremap F gqip
 
 command! W w
 command! Q q
@@ -57,11 +57,11 @@ com! NoTabHi call s:NoTabHi()
 com! ToggleTabHi call s:ToggleTabHi()
 
 "fugitive shortcuts
-nnoremap <Leader>gs :Gstatus<Cr>
-nnoremap <Leader>gc :Gcommit<Cr>
-nnoremap <Leader>gd :Gdiff<Cr>
-nnoremap <Leader><Up> :Gpull<Cr>
-nnoremap <Leader><Down> :Gpush<Cr>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader><Up> :Gpush<CR>
+nnoremap <Leader><Down> :Gpull<CR>
 
 "Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<CR><C-o>
@@ -90,6 +90,8 @@ nmap <Leader>/ :nohlsearch<CR>
 
 "Toggle Gundo tree
 nnoremap <Leader>g :GundoToggle<CR>
+
+nnoremap <Leader>wl :w<CR> :Latexmk<CR>
 
 nmap \ <Leader><Leader>
 
