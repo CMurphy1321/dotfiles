@@ -1,5 +1,4 @@
 set nocompatible
-hi mike
 let mapleader=","
 let maplocalleader=","
 filetype plugin indent on
@@ -43,9 +42,9 @@ set wildignorecase
 set splitbelow
 set splitright
 
-" set t_Co=256
-" set background=dark
-colorscheme Tomorrow
+set t_Co=256
+set background=dark
+colorscheme mustang
 
 "Call space highlighting
 com! SpaceHi call s:SpaceHi()
