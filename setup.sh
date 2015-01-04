@@ -34,7 +34,11 @@ ln -s $dir/vim $HOME/.vim
 # Pull in submodules
 git submodule init && git submodule update
 git submodule update --init --recursive
-mkdir ~/ycmbuild && cd ~/ycmbuild
-cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
-make ycm_support_libs
+mkdir -p $HOME/ycmbuild && cd $HOME/ycmbuild
+cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp || pass="failed"
+if [[ "$pass" = "failed" ]]; then
+    echo "cmake failed! Please make sure you have cmake installed."
+    exit
+fi
+make ycm_support_libs -j4
 rm -rf ~/ycmbuild
