@@ -1,0 +1,41 @@
+Host laplace
+    HostName laplace.ece.rochester.edu
+    User cmurp18
+    ForwardX11 yes
+    ForwardAgent yes
+    ForwardX11Trusted yes
+
+Host enigma
+    HostName enigma.ece.rochester.edu
+    User cmurp18
+    ForwardX11 yes
+    ForwardAgent yes
+    ForwardX11Trusted yes
+
+Host bluehive
+    HostName bluehive2.circ.rochester.edu
+    User cmurp18
+    ForwardX11 yes
+    #ForwardAgent yes
+    #ForwardX11Trusted yes
+
+Host cycle1
+    HostName cycle1.csug.rochester.edu
+    User cmurp18
+    ForwardX11 yes
+    ForwardAgent yes
+    ForwardX11Trusted yes
+
+Host cycle2
+    HostName cycle2.csug.rochester.edu
+    User cmurp18
+    ForwardX11 yes
+    ForwardAgent yes
+    ForwardX11Trusted yes
+
+Host cycle3
+    HostName cycle3.csug.rochester.edu
+    User cmurp18
+    ForwardX11 yes
+    ForwardAgent yes
+    ForwardX11Trusted yes

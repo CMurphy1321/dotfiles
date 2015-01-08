@@ -9,7 +9,7 @@ for file in $home_dir/.*
 do
     filename=$(basename $file)
     if [[ "$filename" != "$(basename $0)" ]]; then
-        if [[ "$filename" = ".inputrc" || "$filename" = ".vimrc" || "$filename" = ".bashrc" ]]; then
+        if [[ "$filename" = ".inputrc" || "$filename" = ".vimrc" || "$filename" = ".bashrc" || "$filename" = ".ssh" ]]; then
             echo "Backing up .$filename"
             mv $HOME/$filename $backup/
         fi
@@ -20,7 +20,7 @@ for file in $dir/*
 do
     filename=$(basename $file)
     if [[ "$filename" != "$(basename $0)" ]]; then
-        if [[ "$filename" = "inputrc" || "$filename" = "vimrc" || "$filename" = "bashrc" ]]; then
+        if [[ "$filename" = "inputrc" || "$filename" = "vimrc" || "$filename" = "bashrc"  || "$filename" = "ssh" ]]; then
             echo "Creating link for .$filename"
             ln -s $dir/$filename $HOME/.$filename
         fi
@@ -42,3 +42,8 @@ if [[ "$pass" = "failed" ]]; then
 fi
 make ycm_support_libs -j4
 rm -rf ~/ycmbuild
+if [[ "$pass" = "failed" ]]; then
+    echo "ssh-keygen failed! Please make sure you have ssh installed."
+    exit
+fi
+cat ~/.ssh/id_rsa.pub >> $HOME/.ssh/known_hosts
