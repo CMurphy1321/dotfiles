@@ -8,7 +8,6 @@ alias open='xdg-open'
 alias la='ls -a'
 alias ll='ls -l'
 PS1='[\u@\h \W]\$ '
-. /etc/profile.d/vte.sh
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -32,3 +31,5 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+. /etc/profile.d/vte.sh
