@@ -1,11 +1,15 @@
 dotfiles
 ========
 This is my repository for configuration files related to unix. My setup.sh
-script will backup current instances of .bashrc, .inputrc, and .vimrc in your
-home folder then link the configuration files in this repository to the
-corresponding files in your home folder. This includes .vim which contains my
-vim plugins and colorschemes. It will also compile and install YCM for you. If
-YCM does not get installed properly, please refer to below.
+script will remove current instances of configures files thenremove current
+instances of configures files then link the configuration files in this
+repository to the corresponding files in your home folder. This includes .vim
+which contains my vim plugins and colorschemes. It will also compile and
+install YCM for you. If YCM does not get installed properly, please refer to
+below. Also make sure you have the following installed on your machine:
+cmake
+python-dev
+clang
 
 YCM Installation
 ========
