@@ -6,8 +6,8 @@ filetype plugin indent on
 execute pathogen#infect()
 
 if has('persistent_undo')
-	set undodir=$HOME/.vim/vimundo
-	set undofile
+    set undodir=$HOME/.vim/vimundo
+    set undofile
 endif
 
 set relativenumber
@@ -91,7 +91,7 @@ nmap <Leader>/ :nohlsearch<CR>
 "Toggle Gundo tree
 nnoremap <Leader>g :GundoToggle<CR>
 
-nnoremap <Leader>wl :w<CR> :Latexmk<CR>
+nnoremap <Leader>lw :w<CR> :Latexmk<CR>
 
 nmap \ <Leader><Leader>
 
