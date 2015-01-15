@@ -95,6 +95,13 @@ nnoremap <Leader>wl :w<CR> :Latexmk<CR>
 
 nmap \ <Leader><Leader>
 
+"Disable EX mode
+noremap Q <NOP>
+
+"Disable help
+noremap <F1> <NOP>
+noremap! <F1> <NOP>
+
 "Allow writing even if you forgot to sudo
 cmap w!! w !sudo tee % >/dev/null
 cmap x!! x !sudo tee % >/dev/null
