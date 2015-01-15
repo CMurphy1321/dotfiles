@@ -102,6 +102,10 @@ noremap Q <NOP>
 noremap <F1> <NOP>
 noremap! <F1> <NOP>
 
+"Remap tab to change tab levels in visual mode
+vnoremap <TAB> >
+vnoremap <S-TAB> <
+
 "Allow writing even if you forgot to sudo
 cmap w!! w !sudo tee % >/dev/null
 cmap x!! x !sudo tee % >/dev/null
