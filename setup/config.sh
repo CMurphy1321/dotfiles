@@ -32,12 +32,12 @@ if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcomplete
     #if you're actually reading this you may care about the following:
         #technically you do not need clang in all cases. If you know you do not
         #need clang simply comment the following out.
-        clang --help || not_install+="\tclang\n"
+    clang --help || not_installed+="\tclang\n"
 
     cmake --help || not_installed+="\tcmake\n"
 
     if [[ "$not_installed" = "" ]]; then
-        cmake -G "Unix Makefiles" . $dir/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp || echo "You may need to install clang." && exit
+        cmake -G "Unix Makefiles" . $dir/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp
         make ycm_support_libs -j4
         echo "All done! Enjoy :)"
     else
