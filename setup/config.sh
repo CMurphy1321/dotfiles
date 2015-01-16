@@ -22,13 +22,8 @@ git submodule update --init --recursive
 #Check to see if YCM is compiled
 if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcompleteme.pyc ]]; then
 
-    # Compile YCM
+# Compile YCM
     mkdir -p $HOME/ycmbuild && cd $HOME/ycmbuild
-
-    #if you're actually reading this you may care about the following:
-        #technically you do not need clang in all cases. If you know you do not
-        #need clang simply comment the following out.
-    clang --help || not_installed+="\tclang\n"
 
     cmake --help || not_installed+="\tcmake\n"
 
