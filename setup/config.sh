@@ -25,10 +25,6 @@ if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcomplete
     # Compile YCM
     mkdir -p $HOME/ycmbuild && cd $HOME/ycmbuild
 
-    if [[ $(ls -R /usr/include/ | grep "Python.h") = "" ]]; then
-        not_installed+="\tpython_dev\n"
-    fi
-
     #if you're actually reading this you may care about the following:
         #technically you do not need clang in all cases. If you know you do not
         #need clang simply comment the following out.
