@@ -19,7 +19,7 @@ cd $dir/config
 git submodule init && git submodule update
 git submodule update --init --recursive
 
-Check to see if YCM is compiled
+#Check to see if YCM is compiled
 if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcompleteme.pyc ]]; then
 
     # Compile YCM
@@ -29,11 +29,12 @@ if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcomplete
         not_installed+="\tpython_dev\n"
     fi
 
-    #cmake . || not_installed+="\tcmake\n"
+    cmake || not_installed+="\tcmake\n"
 
     if [[ "$not_installed" = "" ]]; then
         cmake -G "Unix Makefiles" . $dir/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp
         make ycm_support_libs -j4
+        echo "All done! Enjoy :)"
     else
         clear
         echo "The following items are not installed and are required to compile YouCompleteMe. Please install them and try again."
@@ -41,7 +42,7 @@ if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcomplete
     fi
 
     rm -rf $HOME/ycmbuild/
-fi
-
+else
     clear
     echo "All done! Enjoy :)"
+fi
