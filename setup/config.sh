@@ -31,11 +31,8 @@ if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcomplete
 
     #if you're actually reading this you may care about the following:
         #technically you do not need clang in all cases. If you know you do not
-        #need clang simply change the following variable to 0.
-    need_clang= 0
-    if [[ need_clang ]]; then
+        #need clang simply comment the following out.
         clang --help || not_install+="\tclang\n"
-    fi
 
     cmake --help || not_installed+="\tcmake\n"
 
