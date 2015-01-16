@@ -41,7 +41,7 @@ if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcomplete
     fi
 
     rm -rf $HOME/ycmbuild/
-else
+fi
+
     clear
     echo "All done! Enjoy :)"
-fi
