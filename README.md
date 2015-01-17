@@ -11,8 +11,6 @@ as well as compile and install YCM for you if it has not been setup already. If
 YCM does not get installed properly, please refer to below. Also make sure you
 have the following installed on your machine:
 cmake
-python-dev
-clang
 
 YCM Installation
 ========
