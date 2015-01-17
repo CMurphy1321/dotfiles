@@ -25,7 +25,7 @@ if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcomplete
 # Compile YCM
     mkdir -p $HOME/ycmbuild && cd $HOME/ycmbuild
 
-    cmake --help || not_installed+="\tcmake\n"
+    cmake --help > cmake_check || not_installed+="\tcmake\n"
 
     if [[ "$not_installed" = "" ]]; then
         cmake -G "Unix Makefiles" . $dir/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp
