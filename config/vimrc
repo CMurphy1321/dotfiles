@@ -46,6 +46,9 @@ set t_Co=256
 set background=dark
 colorscheme mustang
 
+"Only show quickfix buffer on errors, not warnings
+let g:LatexBox_quickfix = 4
+
 "Call space highlighting
 com! SpaceHi call s:SpaceHi()
 com! NoSpaceHi call s:NoSpaceHi()
