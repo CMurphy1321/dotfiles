@@ -27,8 +27,14 @@ if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcomplete
     cmake --help > cmake_check || not_installed+="\tcmake\n"
 
     if [[ "$not_installed" = "" ]]; then
-        cmake -G "Unix Makefiles" . $dir/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+        cmake -G "Unix Makefiles" .  $dir/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp || pass="failed"
         make ycm_support_libs -j4
+        if [[ "$pass" = "faile" ]]; then
+            clear
+            echo "got em"
+            exit
+        fi
+
         clear
         echo "All done! Enjoy :)"
     else
