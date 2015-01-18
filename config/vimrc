@@ -1,6 +1,7 @@
 set nocompatible
 let mapleader=","
 let maplocalleader=","
+nmap \ <Leader><Leader>
 filetype plugin indent on
 
 execute pathogen#infect()
@@ -48,7 +49,7 @@ colorscheme mustang
 
 if has ('macunix')
     nnoremap yy yy"*yy
-    nnoremap y ygy"*y
+    vnoremap y ygv"*y
 endif
 
 "Only show quickfix buffer on errors, not warnings
@@ -74,15 +75,6 @@ nnoremap <Leader><Down> :Gpull<CR>
 "Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<CR><C-o>
 
-"Toggle color column
-nnoremap <Leader>m :exec 'set' (&colorcolumn ==# '') ? 'colorcolumn=+1' : 'colorcolumn='<CR>
-
-"Toggle cursorline
-nnoremap <Leader>c :set cursorline!<CR>
-
-"Swap a line with the line below it
-nnoremap <Leader>s ddp
-
 "Toggle spelling
 nnoremap <Leader>z :set spell!<CR>
 
@@ -100,8 +92,6 @@ nmap <Leader>/ :nohlsearch<CR>
 " nnoremap <Leader>g :GundoToggle<CR>
 
 nnoremap <Leader>lw :w<CR> :Latexmk<CR>
-
-nmap \ <Leader><Leader>
 
 "Disable EX mode
 noremap Q <NOP>
@@ -156,7 +146,6 @@ endif
 function! s:TabHi()
     syntax match hiTab /\t/ containedin=ALL
     execute("highlight hiTab " . g:tabhi_color)
-
     let b:tabhi = 1
 endfunction
 
