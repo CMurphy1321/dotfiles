@@ -3,33 +3,40 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias open='xdg-open'
+if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]] || [[ "$TERM_PROGRAM" = "iTerm.app" ]]; then
+    # Make ls colors readable
+    export CLICOLOR=1
+    export LSCOLORS=ExFxBxDxCxegedabagacad
+    alias ls='ls -GFh'
+else
+    # Colorize ls output
+    alias ls='ls --color=auto'
+    alias open='xdg-open'
+    PS1='[\u@\h \W]\$ '
+
+    # Show activity in titlebar
+    case "$TERM" in
+    xterm*|rxvt*)
+        PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+        show_command_in_title_bar()
+        {
+            case "$BASH_COMMAND" in
+                *\033]0*)
+                ;;
+                *)
+                    echo -ne "\033]0;${USER}@${HOSTNAME}: ${BASH_COMMAND}\007"
+                    ;;
+            esac
+        }
+        trap show_command_in_title_bar DEBUG
+        ;;
+    *)
+        ;;
+    esac
+
+    # Open new tabs in current directory
+    . /etc/profile.d/vte.sh
+fi
+
 alias la='ls -a'
 alias ll='ls -l'
-PS1='[\u@\h \W]\$ '
-
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-
-case "$TERM" in
-xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-    show_command_in_title_bar()
-    {
-        case "$BASH_COMMAND" in
-            *\033]0*)
-            ;;
-            *)
-                echo -ne "\033]0;${USER}@${HOSTNAME}: ${BASH_COMMAND}\007"
-                ;;
-        esac
-    }
-    trap show_command_in_title_bar DEBUG
-    ;;
-*)
-    ;;
-esac
-
-. /etc/profile.d/vte.sh
