@@ -37,42 +37,9 @@
 [submodule "vim/bundle/vim-multiple-cursors"]
 	path = vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
-[submodule "config/vim/bundle/ctrlp.vim"]
-	path = config/vim/bundle/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim.git
-[submodule "config/vim/bundle/file-line"]
-	path = config/vim/bundle/file-line
-	url = git@github.com:bogado/file-line.git
 [submodule "config/vim/bundle/gundo.vim"]
 	path = config/vim/bundle/gundo.vim
 	url = git@github.com:sjl/gundo.vim.git
-[submodule "config/vim/bundle/LaTeX-Box"]
-	path = config/vim/bundle/LaTeX-Box
-	url = git@github.com:LaTeX-Box-Team/LaTeX-Box.git
-[submodule "config/vim/bundle/matchit"]
-	path = config/vim/bundle/matchit
-	url = git@github.com:tmhedberg/matchit.git
-[submodule "config/vim/bundle/rainbow_parentheses.vim"]
-	path = config/vim/bundle/rainbow_parentheses.vim
-	url = git@github.com:kien/rainbow_parentheses.vim.git
-[submodule "config/vim/bundle/tabular"]
-	path = config/vim/bundle/tabular
-	url = git@github.com:godlygeek/tabular.git
-[submodule "config/vim/bundle/tcomment_vim"]
-	path = config/vim/bundle/tcomment_vim
-	url = git@github.com:tomtom/tcomment_vim.git
-[submodule "config/vim/bundle/vim-argumentative"]
-	path = config/vim/bundle/vim-argumentative
-	url = git@github.com:PeterRincker/vim-argumentative.git
-[submodule "config/vim/bundle/vim-easymotion"]
-	path = config/vim/bundle/vim-easymotion
-	url = git@github.com:Lokaltog/vim-easymotion.git
-[submodule "config/vim/bundle/vim-fugitive"]
-	path = config/vim/bundle/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive.git
 [submodule "config/vim/bundle/vim-multiple-cursors"]
 	path = config/vim/bundle/vim-multiple-cursors
 	url = git@github.com:terryma/vim-multiple-cursors.git
-[submodule "config/vim/bundle/YouCompleteMe"]
-	path = config/vim/bundle/YouCompleteMe
-	url = git@github.com:Valloric/YouCompleteMe.git
