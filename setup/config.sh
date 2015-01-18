@@ -1,6 +1,5 @@
 #!/bin/bash
-dir=$HOME/dotfiles
-home_dir=$HOME/
+dir="$(dirname "$(pwd)")"
 
 # Remove current instances of config files
 rm -rf $HOME/.vim

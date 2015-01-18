@@ -1,6 +1,5 @@
 #!/bin/bash
-dir=$HOME/dotfiles
-home_dir=$HOME/
+dir="$(dirname "$(pwd)")"
 
 # Remove current ssh files
 rm -f $HOME/.ssh/config
