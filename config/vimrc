@@ -157,10 +157,10 @@ endfunction
 function! s:ToggleTabHi()
     if exists("b:tabhi") && b:tabhi
         call s:NoTabHi()
-        echo ""
+        echo "Don't highlight tabs"
     else
         call s:TabHi()
-        echo ""
+        echo "Highlight tabs"
     endif
 endfunction
 
@@ -185,9 +185,9 @@ endfunction
 function! s:ToggleSpaceHi()
     if exists("b:spacehi") && b:spacehi
         call s:NoSpaceHi()
-        echo ""
+        echo "Don't highlight whitespace"
     else
         call s:SpaceHi()
-        echo ""
+        echo "Highlight whitespace"
     endif
 endfunction
