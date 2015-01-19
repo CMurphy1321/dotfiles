@@ -28,12 +28,12 @@ if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcomplete
 
     if [[ "$not_installed" = "" ]]; then
         cmake -G "Unix Makefiles" .  $dir/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp || pass="failed"
+            if [[ "$pass" = "failed" ]]; then
+                clear
+                echo "Compiling YCM has failed! Please make sure you have python-dev and build-essential installed and try again. If you have persisting issues, consult https://github.com/Valloric/YouCompleteMe."
+                exit
+            fi
         make ycm_support_libs -j4
-        if [[ "$pass" = "faile" ]]; then
-            clear
-            echo "got em"
-            exit
-        fi
 
         clear
         echo "All done! Enjoy :)"
