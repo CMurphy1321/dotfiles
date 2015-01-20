@@ -23,7 +23,7 @@ set tabstop=4
 set expandtab
 set tw=79
 set formatoptions+=w
-nnoremap F gqip
+nnoremap <Leader>F gqip :%s/\s\+$//<CR><C-o>
 
 command! W w
 command! Q q
