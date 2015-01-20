@@ -92,6 +92,7 @@ nmap <Leader>/ :nohlsearch<CR>
 " nnoremap <Leader>g :GundoToggle<CR>
 
 nnoremap <Leader>lw :w<CR> :Latexmk<CR>
+nnoremap <Leader>vv :w<CR> :Latexmk<CR> :LatexView<CR>
 
 "Disable EX mode
 noremap Q <NOP>
