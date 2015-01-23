@@ -1,6 +1,9 @@
 #!/bin/bash
 setupdir=$(dirname $0)
 dir=$(dirname $setupdir)
+if [ $dir = "." ]; then
+    dir="$(dirname "$(pwd)")"
+fi
 
 # Remove current instances of config files
 rm -rf $HOME/.vim
@@ -20,7 +23,7 @@ git submodule init && git submodule update
 git submodule update --init --recursive
 
 #Check to see if YCM is compiled
-if [ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcompleteme.pyc ]; then
+if [ ! -f $dir/config/vim/bundle/YouCompleteMe/python/ycm/youcompleteme.pyc ]; then
 
 # Compile YCM
     mkdir -p $HOME/ycmbuild && cd $HOME/ycmbuild
