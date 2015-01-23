@@ -1,9 +1,8 @@
 #!/bin/bash
 setupdir=$(dirname $0)
-dir=$(dirname $setupdir)
-if [ $dir = "." ]; then
-    dir="$(dirname "$(pwd)")"
-fi
+cd $setupdir
+cd ..
+dir=$(pwd)
 
 # Remove current instances of config files
 rm -rf $HOME/.vim
