@@ -1,5 +1,6 @@
 #!/bin/bash
-dir="$(dirname "$(pwd)")"
+setupdir=$(dirname $0)
+dir=$(dirname $setupdir)
 
 # Remove current instances of config files
 rm -rf $HOME/.vim
@@ -14,21 +15,22 @@ ln -s $dir/config/bashrc $HOME/.bashrc
 ln -s $dir/config/inputrc $HOME/.inputrc
 
 # Pull in submodules
-cd $dir/config
+cd $dir/
 git submodule init && git submodule update
+echo "fuck you"
 git submodule update --init --recursive
 
 #Check to see if YCM is compiled
-if [[ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcompleteme.pyc ]]; then
+if [ ! -f $HOME/dotfiles/config/vim/bundle/YouCompleteMe/python/ycm/youcompleteme.pyc ]; then
 
 # Compile YCM
     mkdir -p $HOME/ycmbuild && cd $HOME/ycmbuild
 
     cmake --help > cmake_check || not_installed+="\tcmake\n"
 
-    if [[ "$not_installed" = "" ]]; then
+    if [ "$not_installed" = "" ]; then
         cmake -G "Unix Makefiles" .  $dir/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp || pass="failed"
-            if [[ "$pass" = "failed" ]]; then
+            if [ "$pass" = "failed" ]; then
                 clear
                 echo "Compiling YCM has failed! Please make sure you have python-dev and build-essential installed and try again. If you have persisting issues, consult https://github.com/Valloric/YouCompleteMe."
                 exit
