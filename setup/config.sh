@@ -17,7 +17,6 @@ ln -s $dir/config/inputrc $HOME/.inputrc
 # Pull in submodules
 cd $dir/
 git submodule init && git submodule update
-echo "fuck you"
 git submodule update --init --recursive
 
 #Check to see if YCM is compiled
