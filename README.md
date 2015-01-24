@@ -1,5 +1,6 @@
 dotfiles
 ========
+hi scoot
 This is my repository for configuration files related to unix. The setup files
 are split into config.sh and ssh.sh. The ssh.sh script installs my config file
 and does some basic ssh key management. All config files (bashrc, vim, inputrc)
