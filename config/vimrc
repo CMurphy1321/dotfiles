@@ -4,6 +4,8 @@ let maplocalleader=","
 nmap \ <Leader><Leader>
 filetype plugin indent on
 
+let g:LatexBox_custom_indent = 0
+let g:tex_indent_brace = 0
 execute pathogen#infect()
 
 if has('persistent_undo')
@@ -30,8 +32,8 @@ command! Q q
 command! Wq wq
 
 syntax on
-"set autoindent
-set smartindent
+set autoindent
+"set smartindent
 set smartcase
 set ic
 set showmatch
