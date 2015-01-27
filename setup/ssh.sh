@@ -1,5 +1,8 @@
 #!/bin/bash
-dir="$(dirname "$(pwd)")"
+setupdir=$(dirname $0)
+cd $setupdir
+cd ..
+dir=$(pwd)
 
 # Remove current ssh files
 rm -f $HOME/.ssh/config
@@ -7,8 +10,8 @@ rm -f $HOME/.ssh/authorized_keys
 
 # Link config files
 mkdir -p $HOME/.ssh/
-ln -s $dir/ssh/config $HOME/.ssh/config
-ln -s $dir/ssh/authorized_keys $HOME/.ssh/authorized_keys
+ln -s $dir/config/ssh/config $HOME/.ssh/config
+ln -s $dir/config/ssh/authorized_keys $HOME/.ssh/authorized_keys
 
 # Make ssh key if there isn't one
 if [ ! -f $HOME/.ssh/id_rsa.pub ]; then
