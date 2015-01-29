@@ -11,6 +11,9 @@ if has('persistent_undo')
     set undofile
 endif
 
+"Don't show scratch preview
+set completeopt-=preview
+
 set relativenumber
 set scrolloff=3
 set ruler
