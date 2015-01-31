@@ -78,7 +78,13 @@ nnoremap <Leader><Up> :Gpush<CR>
 nnoremap <Leader><Down> :Gpull<CR>
 
 "Remove trailing whitespace
-nnoremap <leader>W :%s/\s\+$//<CR><C-o>
+nnoremap <leader>W :%s/\s\+$//<CR> <bar> :nohlsearch<CR> <bar> :echo("Whitespace Removed")<CR>
+
+"Toggle Tab Highlighting
+map <Leader>t :ToggleTabHi<CR>
+
+"Toggle Trailing Whitespace Highlighting
+map <Leader>w :ToggleSpaceHi<CR>
 
 "Toggle spelling
 nnoremap <Leader>z :set spell!<CR>
@@ -143,8 +149,6 @@ vnoremap <silent> # :<C-U>
     \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
     \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-"Toggle Tab Highlighting
-map <Leader>t :ToggleTabHi<CR>
 if !exists("g:tabhi_color")
     let g:tabhi_color=" ctermbg=red guibg=red"
 endif
@@ -170,8 +174,6 @@ function! s:ToggleTabHi()
     endif
 endfunction
 
-"Toggle Trailing Whitespace Highlighting
-map <Leader>w :ToggleSpaceHi<CR>
 if !exists("g:spacehi_spacecolor")
     let g:spacehi_spacecolor="ctermbg=white guibg=white"
 endif
