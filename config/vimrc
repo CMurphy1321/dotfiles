@@ -78,7 +78,7 @@ nnoremap <Leader><Up> :Gpush<CR>
 nnoremap <Leader><Down> :Gpull<CR>
 
 "Remove trailing whitespace
-nnoremap <leader>W :%s/\s\+$//<CR> <bar> :nohlsearch<CR> <bar> :echo("Whitespace Removed")<CR>
+nnoremap <leader>W :%s/\s\+$// <bar> :nohlsearch<CR> <bar> :echo("Whitespace Removed")<CR>
 
 "Toggle Tab Highlighting
 map <Leader>t :ToggleTabHi<CR>
@@ -98,6 +98,9 @@ nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 
 "Clear search highlight
 nmap <Leader>/ :nohlsearch<CR>
+
+"Toggle colorcolumn
+nnoremap <Leader>c :exec 'set' (&colorcolumn ==# '') ? 'colorcolumn=+1' : 'colorcolumn='<CR>
 
 " "Toggle Gundo tree
 " nnoremap <Leader>g :GundoToggle<CR>
