@@ -12,6 +12,20 @@ Host enigma
     ForwardAgent yes
     ForwardX11Trusted yes
 
+Host enterprise
+    HostName enterprise.ceas.rochester.edu
+    User cmurp18
+    ForwardX11 yes
+    ForwardAgent yes
+    ForwardX11Trusted yes
+
+Host galaxy
+    HostName galaxy.ece.rochester.edu
+    User cmurp18
+    ForwardX11 yes
+    ForwardAgent yes
+    ForwardX11Trusted yes
+
 Host bluehive
     HostName bluehive2.circ.rochester.edu
     User cmurp18
