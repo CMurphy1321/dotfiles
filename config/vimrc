@@ -87,6 +87,12 @@ com! TabHi call s:TabHi()
 com! NoTabHi call s:NoTabHi()
 com! ToggleTabHi call s:ToggleTabHi()
 
+"Start with rainbow parenthesis on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 "Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$// <bar> :nohlsearch<CR> <bar> :echo("Whitespace Removed")<CR>
 
