@@ -26,6 +26,7 @@ esac
 # Open new tabs in current directory
 . /etc/profile.d/vte.sh
 
+alias open='xdg-open'
 alias la='ls -a'
 alias ll='ls -l'
 alias ipj='ipython notebook --profile julia'
