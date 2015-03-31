@@ -51,7 +51,7 @@ set formatoptions+=w
 
 "Reformat current paragraph
 "Use with caution
-nnoremap <Leader>F gqip :%s/\s\+$//<CR><C-o>
+nnoremap <Leader>F gqip :%s/\s\+$// <bar> nohlsearch <CR><C-o>
 
 "A few misc things
 syntax on
