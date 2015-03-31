@@ -94,7 +94,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 "Remove trailing whitespace
-nnoremap <leader>W :%s/\s\+$// <bar> :nohlsearch<CR> <bar> :echo("Whitespace Removed")<CR>
+nnoremap <leader>W :%s/\s\+$// <bar> nohlsearch<CR> <bar> :echo("Whitespace Removed")<CR>
 
 "Toggle Tab Highlighting
 map <Leader>t :ToggleTabHi<CR>
