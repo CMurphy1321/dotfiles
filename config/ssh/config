@@ -53,3 +53,7 @@ Host cycle3
     ForwardX11 yes
     ForwardAgent yes
     ForwardX11Trusted yes
+
+Host digitalocean
+    HostName 104.236.73.191
+    User root
