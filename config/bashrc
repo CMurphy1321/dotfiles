@@ -33,5 +33,8 @@ alias ipj='ipython notebook --profile julia'
 alias smake='make -j4 || make -j3 || make -j2 || make'
 alias lasso='~/Dropbox/lasso/manage.py runserver'
 alias mpi='mpirun.openmpi -np'
+alias rd1='rdesktop -g 1366x700 ITSC-9010-13.UR.Rochester.edu'
+alias rd2='rdesktop -g 1366x700 G108-990-12.UR.Rochester.edu'
+alias rd3='rdesktop -g 1366x700 G108A-990-15.UR.Rochester.edu'
 
 set -o vi
