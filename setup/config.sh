@@ -36,8 +36,9 @@ if [ ! -f $dir/config/vim/bundle/YouCompleteMe/python/ycm/youcompleteme.pyc ]; t
                 echo "Compiling YCM has failed! Please make sure you have python-dev and build-essential installed and try again. If you have persisting issues, consult https://github.com/Valloric/YouCompleteMe."
                 exit
             fi
-        cores=$(grep -c ^processor /proc/cpuinfo)
-        make ycm_support_libs -j$(cores)
+        #cores=$(grep -c ^processor /proc/cpuinfo)
+        #make ycm_support_libs -j$(cores)
+        make ycm_support_libs -j4
 
         clear
         echo "All done! Enjoy :)"
