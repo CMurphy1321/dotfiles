@@ -26,6 +26,7 @@ set relativenumber
 "Leave 3 lines above, below cursor
 set scrolloff=3
 
+"Show line, column number
 set ruler
 
 "Make sure backspace works like you'd expect
@@ -48,10 +49,6 @@ set autoindent
 "Wrap after tw
 set tw=79
 set formatoptions+=w
-
-"Reformat current paragraph
-"Use with caution
-nnoremap <Leader>F gqip :%s/\s\+$// <bar> nohlsearch <CR><C-o>
 
 "A few misc things
 syntax on
@@ -95,6 +92,10 @@ au Syntax * RainbowParenthesesLoadBraces
 
 "Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$// <bar> nohlsearch<CR> <bar> :echo("Whitespace Removed")<CR>
+
+"Reformat current paragraph
+"Use with caution
+nnoremap <Leader>F gqip :%s/\s\+$// <bar> nohlsearch <CR><C-o>
 
 "Toggle Tab Highlighting
 map <Leader>t :ToggleTabHi<CR>
