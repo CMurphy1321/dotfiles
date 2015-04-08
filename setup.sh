@@ -9,8 +9,6 @@ rm -rf $HOME/.vim
 rm -f $HOME/.vimrc
 rm -f $HOME/.bashrc
 rm -f $HOME/.inputrc
-rm -f $HOME/.ssh/config
-ln -s $dir/config/ssh/config $HOME/.ssh/config
 
 # Link config files
 ln -s $dir/config/vim $HOME/.vim
@@ -54,15 +52,4 @@ if [ ! -f $dir/config/vim/bundle/YouCompleteMe/python/ycm/youcompleteme.pyc ]; t
 else
     clear
     echo "All done! Enjoy :)"
-fi
-
-if [ ! -f $HOME/.ssh/id_rsa.pub ]; then
-    ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa || pass="failed"
-else
-    echo "Existing ssh keys detected. Make sure yours is in the authorized_keys folder to ensure easy sshing!"
-fi
-
-if [[ "$pass" = "failed" ]]; then
-    echo "ssh-keygen failed! Please make sure you have ssh installed."
-    exit
 fi
