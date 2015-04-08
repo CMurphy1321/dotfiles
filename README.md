@@ -1,9 +1,5 @@
 dotfiles
 ========
-<<<<<<< HEAD
-hi scoot
-=======
->>>>>>> c58eaf8adac31a86c08ee494eb4feea140ed918b
 This is my repository for configuration files related to unix. The setup files
 are split into config.sh and ssh.sh. The ssh.sh script installs my config file
 and does some basic ssh key management. All config files (bashrc, vim, inputrc)
