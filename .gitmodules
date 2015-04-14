@@ -19,6 +19,3 @@
 [submodule "config/vim/bundle/tcomment_vim"]
 	path = config/vim/bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "config/vim/bundle/vim-easymotion"]
-	path = config/vim/bundle/vim-easymotion
-	url = https://github.com/Lokaltog/vim-easymotion.git
