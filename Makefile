@@ -9,7 +9,7 @@ all:
 	ln -s $(shell pwd)/config/inputrc $(HOME)/.inputrc
 	git submodule init && git submodule update
 	git submodule update --init --recursive
-	mkdir -p ycmbuild && cd ycmbuild && cmake -G "Unix Makefiles" . $(shell pwd)/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp && make ycm_support_libs -j6
+	mkdir -p ycmbuild && cd ycmbuild && cmake -G "Unix Makefiles" . $(shell pwd)/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp && make ycm_support_libs -j$(shell grep -c ^processor /proc/cpuinfo)
 	rm -rf ycmbuild/
 	clear
 	echo "All done! Enjoy :)"
