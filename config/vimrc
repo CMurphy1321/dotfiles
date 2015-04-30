@@ -114,9 +114,9 @@ nnoremap <Leader>lw :w<CR> :Latexmk<CR>
 nnoremap <Leader>vv :w<CR> :Latexmk<CR> :LatexView<CR>
 
 "Easily switch sp to vsp
-nnoremap <Leader>sv <C-w>t<C-w>K
+nnoremap <Leader>vs <C-w>t<C-w>K
 "Easily switch vsp to sp
-nnoremap <Leader>vs <C-w>t<C-w>H
+nnoremap <Leader>sv <C-w>t<C-w>H
 
 "Disable EX mode
 noremap Q <NOP>
