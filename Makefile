@@ -13,10 +13,13 @@ clean:
 	rm -f $(HOME)/.inputrc
 
 link:
+	@make clean
 	@ln -s $(shell pwd)/config/vim $(HOME)/.vim
-	@ln -s $(shell pwd)/config/vimrc $(HOME)/.vimrc
-	@ln -s $(shell pwd)/config/bashrc $(HOME)/.bashrc
-	@ln -s $(shell pwd)/config/inputrc $(HOME)/.inputrc
+	@ln -s $(shell pwd)/config/files/vimrc $(HOME)/.vimrc
+	@ln -s $(shell pwd)/config/files/bashrc $(HOME)/.bashrc
+	@ln -s $(shell pwd)/config/files/bash_profile $(HOME)/.bash_profile
+	@ln -s $(shell pwd)/config/files/bash_prompt $(HOME)/.bash_prompt
+	@ln -s $(shell pwd)/config/files/inputrc $(HOME)/.inputrc
 	@echo "Everything is relinked!"
 
 submodules:

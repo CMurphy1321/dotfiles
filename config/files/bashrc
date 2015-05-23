@@ -35,4 +35,6 @@ alias rd1='rdesktop -g 1366x700 ITSC-9010-13.UR.Rochester.edu'
 alias rd2='rdesktop -g 1366x700 G108-990-12.UR.Rochester.edu'
 alias rd3='rdesktop -g 1366x700 G108A-990-15.UR.Rochester.edu'
 
+source ~/.bash_prompt
+
 set -o vi

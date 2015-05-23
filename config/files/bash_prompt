@@ -1,0 +1,118 @@
+c_repo_clean='\[\033[32;1m\]'
+c_repo_dirty='\[\033[31;1m\]'
+c_danger='\[\033[33;1m\]'
+c_reset='\[\033[0m\]'
+c_user='\[\033[33m\]'
+c_host='\[\033[34m\]'
+c_path='\[\033[36m\]'
+
+working_directory() {
+    echo "${c_user}\u${c_reset}@${c_host}\h${c_reset} ${c_path}\w${c_reset}"
+}
+
+parse_git_branch() {
+    local_branch=$(git symbolic-ref -q HEAD)
+    local_branch="${local_branch#refs/heads/}"
+    changes=$(git status -sb | wc -l)
+
+    if [ $changes -gt '1' ]; then
+        echo " ${c_repo_dirty}$local_branch${c_reset}"
+    else
+        echo " ${c_repo_clean}$local_branch${c_reset}"
+    fi
+}
+
+parse_local_state() {
+    local g=$1
+    local state
+
+    if [ -d "$g/rebase-merge" ]; then
+        if [ -f "$g/rebase-merge/interactive" ]; then
+            state="REBASE-i"
+        else
+            state="REBASE-m"
+        fi
+    elif [ -d "$g/rebase-apply" ]; then
+        if [ -f "$g/rebase-apply/rebasing" ]; then
+            state="REBASE"
+        elif [ -f "$g/rebase-apply/applying" ]; then
+            state="AM"
+        else
+            state="AM/REBASE"
+        fi
+    elif [ -f "$g/MERGE_HEAD" ]; then
+        state="MERGING"
+    elif [ -f "$g/CHERRY_PICK_HEAD" ]; then
+        state="CHERRY-PICKING"
+    elif [ -f "$g/REVERT_HEAD" ]; then
+        state="REVERTING"
+    elif [ -f "$g/BISECT_LOG" ]; then
+        state="BISECTING"
+    fi
+
+    if [ "$state" != "" ]; then
+        echo "|${c_danger}$state${c_reset}"
+    fi
+}
+
+parse_remote_state() {
+    remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
+    if [[ "$remote_state" != "" ]]; then
+        out="${c_reset}"
+
+        if [[ "$remote_state" == *ahead* ]] && [[ "$remote_state" == *behind* ]]; then
+            behind_num=$(echo "$remote_state" | grep -oh "behind [0-9]*" | grep -oh "[0-9]*$")
+            ahead_num=$(echo "$remote_state" | grep -oh "ahead [0-9]*" | grep -oh "[0-9]*$")
+            out="$out${c_repo_dirty}$behind_num${c_reset}, ${c_repo_clean}$ahead_num${c_reset}"
+
+        elif [[ "$remote_state" == *ahead* ]]; then
+            ahead_num=$(echo "$remote_state" | grep -oh "ahead [0-9]*" | grep -oh "[0-9]*$")
+            out="$out${c_repo_clean}$ahead_num${c_reset}"
+
+        elif [[ "$remote_state" == *behind* ]]; then
+            behind_num=$(echo "$remote_state" | grep -oh "behind [0-9]*" | grep -oh "[0-9]*$")
+            out="$out${c_repo_dirty}$behind_num${c_reset}"
+        fi
+
+        out="$out${c_reset}"
+        echo " -> ($out)"
+    fi
+}
+
+parse_repo() {
+    local repo_info="$(git rev-parse --git-dir --is-inside-git-dir \
+        --is-bare-repository --is-inside-work-tree \
+        --short HEAD 2>/dev/null)"
+    local rev_parse_status_code="$?"
+
+    if [ -z "$repo_info" ]; then
+        return
+    fi
+
+    local short_sha
+    if [ "$rev_parse_status_code" = "0" ]; then
+        short_sha="${repo_info##*$'\n'}"
+        repo_info="${repo_info%$'\n'*}"
+    fi
+
+    inside_work_tree="${repo_info##*$'\n'}"
+    repo_info="${repo_info%$'\n'*}"
+    bare_repository=="${repo_info##*$'\n'}"
+    repo_info="${repo_info%$'\n'*}"
+    inside_git_dir="${repo_info##*$'\n'}"
+    repo_info="${repo_info%$'\n'*}"
+    git_dir="${repo_info##*$'\n'}"
+    repo_info="${repo_info%$'\n'*}"
+
+    if [ "$inside_git_dir" = "true" ]; then
+        return
+    fi
+
+    echo "$(parse_git_branch)$(parse_local_state $git_dir)$(parse_remote_state)"
+}
+
+prompt() {
+    PS1="\n[$(working_directory)$(parse_repo)]\n$ "
+}
+
+PROMPT_COMMAND=prompt

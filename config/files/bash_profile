@@ -1,0 +1,40 @@
+# ~/.bashrc
+#
+# If not running interactively, don't do anything
+
+echo "hi"
+source ~/.bash_prompt
+
+
+# Show activity in titlebar
+# case "$TERM" in
+# xterm*|rxvt*)
+#     PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+#     show_command_in_title_bar()
+#     {
+#         case "$BASH_COMMAND" in
+#             *\033]0*)
+#             ;;
+#             *)
+#                 echo -ne "\033]0;${USER}@${HOSTNAME}: ${BASH_COMMAND}\007"
+#                 ;;
+#         esac
+#     }
+#     trap show_command_in_title_bar DEBUG
+#     ;;
+# *)
+#     ;;
+# esac
+
+# Open new tabs in current directory
+. /etc/profile.d/vte.sh
+
+alias open='xdg-open'
+alias la='ls -a'
+alias ll='ls -l'
+alias smake='make -j$(shell grep -c ^processor /proc/cpuinfo);'
+alias rd1='rdesktop -g 1366x700 ITSC-9010-13.UR.Rochester.edu'
+alias rd2='rdesktop -g 1366x700 G108-990-12.UR.Rochester.edu'
+alias rd3='rdesktop -g 1366x700 G108A-990-15.UR.Rochester.edu'
+
+set -o vi
