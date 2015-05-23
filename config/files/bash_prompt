@@ -112,7 +112,7 @@ parse_repo() {
 }
 
 prompt() {
-    PS1="\n[$(working_directory)$(parse_repo)]\n$ "
+    PS1="\n[$(working_directory)$(parse_repo)]$ "
 }
 
 PROMPT_COMMAND=prompt
