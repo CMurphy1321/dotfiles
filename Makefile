@@ -2,7 +2,6 @@ files := $(wildcard config/files/*)
 configs := $(foreach config, $(files), $(notdir $(config)))
 
 all:
-	@make clean
 	@make link
 	@make submodules
 	@make ycm
