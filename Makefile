@@ -1,3 +1,6 @@
+files := $(wildcard config/files/*)
+configs := $(foreach config, $(files), $(notdir $(config)))
+
 all:
 	@make clean
 	@make link
@@ -16,12 +19,12 @@ clean:
 
 link:
 	@make clean
-	@ln -s $(shell pwd)/config/vim $(HOME)/.vim
-	@ln -s $(shell pwd)/config/files/vimrc $(HOME)/.vimrc
-	@ln -s $(shell pwd)/config/files/bashrc $(HOME)/.bashrc
-	@ln -s $(shell pwd)/config/files/bash_profile $(HOME)/.bash_profile
-	@ln -s $(shell pwd)/config/files/bash_prompt $(HOME)/.bash_prompt
-	@ln -s $(shell pwd)/config/files/inputrc $(HOME)/.inputrc
+	@for config in $(configs); \
+	do \
+		echo $$config; \
+		ln -sf $(realpath $(shell pwd))/config/files/$$config $(HOME)/.$$config; \
+	done
+	@ln -sf $(shell pwd)/config/vim $(HOME)/.vim
 	@echo "Everything is relinked!"
 
 submodules:
@@ -32,5 +35,5 @@ ycm:
 		echo "YouCompleteMe is already compiled."; \
 	else \
 		mkdir -p ycmbuild && cd ycmbuild && cmake -G "Unix Makefiles" . $(shell pwd)/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp && make ycm_support_libs -j$(shell grep -c ^processor /proc/cpuinfo); \
-		rm -rf ycmbuild/; \
 	fi
+	rm -rf ycmbuild/; \
