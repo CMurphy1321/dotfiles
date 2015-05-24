@@ -91,18 +91,18 @@ parse_repo() {
 
     local short_sha
     if [ "$rev_parse_status_code" = "0" ]; then
-        short_sha="${repo_info##*$'\n'}"
-        repo_info="${repo_info%$'\n'*}"
+        short_sha="${repo_info##*$}"
+        repo_info="${repo_info%$*}"
     fi
 
-    inside_work_tree="${repo_info##*$'\n'}"
-    repo_info="${repo_info%$'\n'*}"
-    bare_repository=="${repo_info##*$'\n'}"
-    repo_info="${repo_info%$'\n'*}"
-    inside_git_dir="${repo_info##*$'\n'}"
-    repo_info="${repo_info%$'\n'*}"
-    git_dir="${repo_info##*$'\n'}"
-    repo_info="${repo_info%$'\n'*}"
+    inside_work_tree="${repo_info##*$}"
+    repo_info="${repo_info%$*}"
+    bare_repository=="${repo_info##*$}"
+    repo_info="${repo_info%$*}"
+    inside_git_dir="${repo_info##*$}"
+    repo_info="${repo_info%$*}"
+    git_dir="${repo_info##*$}"
+    repo_info="${repo_info%$*}"
 
     if [ "$inside_git_dir" = "true" ]; then
         return
@@ -112,7 +112,7 @@ parse_repo() {
 }
 
 prompt() {
-    PS1="\n[$(working_directory)$(parse_repo)]$ "
+    PS1="[$(working_directory)$(parse_repo)]$ "
 }
 
 PROMPT_COMMAND=prompt
