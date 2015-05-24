@@ -20,7 +20,6 @@ link:
 	@make clean
 	@for config in $(configs); \
 	do \
-		echo $$config; \
 		ln -sf $(realpath $(shell pwd))/config/files/$$config $(HOME)/.$$config; \
 	done
 	@ln -sf $(shell pwd)/config/vim $(HOME)/.vim
