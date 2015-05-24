@@ -3,6 +3,7 @@ let mapleader=","
 let maplocalleader=","
 nmap \ <Leader><Leader>
 filetype plugin indent on
+execute pathogen#infect()
 
 "Dont use LaTeXBox indents
 let g:LatexBox_custom_indent = 0
@@ -21,7 +22,7 @@ endif
 set completeopt-=preview
 
 "Number lines
-set number
+set relativenumber
 "Leave 3 lines above, below cursor
 set scrolloff=3
 
@@ -56,6 +57,7 @@ set ic
 set showmatch
 set incsearch
 set hlsearch
+set wildignorecase
 
 "Keep current buffer at the top for sp, left for vsp
 set splitbelow
@@ -71,6 +73,12 @@ if has ('macunix')
     nnoremap yy yy"*yy
     vnoremap y ygv"*y
 endif
+
+"Start with rainbow parenthesis on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 "Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$// <bar> nohlsearch<CR> <bar> :echo("Whitespace Removed")<CR>
@@ -91,6 +99,9 @@ nnoremap <Leader>z :set spell!<CR>
 "Align in visual
 vnoremap <Leader>te :Tab /=<CR>
 vnoremap <Leader>tc :Tab /:<CR>
+
+"Toggle rainbow parentheses
+nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 
 "Clear search highlight
 nmap <Leader>/ :nohlsearch<CR>
@@ -133,6 +144,11 @@ set autochdir
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
 endif
+
+"Toggle all for rainbow parentheses
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 "Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
