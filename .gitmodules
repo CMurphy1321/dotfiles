@@ -1,9 +1,3 @@
-[submodule "config/vim/bundle/YouCompleteMe"]
-	path = config/vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "config/vim/bundle/LaTeX-Box"]
-	path = config/vim/bundle/LaTeX-Box
-	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
 [submodule "config/vim/bundle/rainbow_parentheses.vim"]
 	path = config/vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim.git
