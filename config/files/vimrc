@@ -57,7 +57,6 @@ set ic
 set showmatch
 set incsearch
 set hlsearch
-set wildignorecase
 
 "Keep current buffer at the top for sp, left for vsp
 set splitbelow
