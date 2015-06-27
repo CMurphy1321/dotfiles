@@ -1,0 +1,7 @@
+[user]
+    name = Colin Murphy
+	email = cmurphy1321@gmail.com
+[core]
+    editor = vim
+[push]
+    default = simple
