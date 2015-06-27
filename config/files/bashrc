@@ -1,5 +1,5 @@
-# ~/.bashrc
-#
+source ~/.bash_prompt
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -23,18 +23,13 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Open new tabs in current directory
-. /etc/profile.d/vte.sh
+uname='uname'
+if [[ "$uname" == 'Linux' ]]; then
+    . /etc/profile.d/vte.sh
+    alias open='xdg-open'
+fi
 
-alias open='xdg-open'
 alias la='ls -a'
 alias ll='ls -l'
-alias smake='make -j$(shell grep -c ^processor /proc/cpuinfo);'
-alias lasso='~/Dropbox/projects/lasso/manage.py runserver'
-alias rd1='rdesktop -g 1366x700 ITSC-9010-13.UR.Rochester.edu'
-alias rd2='rdesktop -g 1366x700 G108-990-12.UR.Rochester.edu'
-alias rd3='rdesktop -g 1366x700 G108A-990-15.UR.Rochester.edu'
-
-source ~/.bash_prompt
 
 set -o vi
