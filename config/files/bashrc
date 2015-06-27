@@ -8,6 +8,10 @@ if [[ "$uname" == 'Linux' ]]; then
     . /etc/profile.d/vte.sh
     alias open='xdg-open'
 fi
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
 
 alias la='ls -a'
 alias ll='ls -l'
