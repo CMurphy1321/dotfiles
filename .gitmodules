@@ -7,9 +7,6 @@
 [submodule "config/vim/bundle/rainbow_parentheses.vim"]
 	path = config/vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim.git
-[submodule "config/vim/bundle/file-line"]
-	path = config/vim/bundle/file-line
-	url = https://github.com/bogado/file-line.git
 [submodule "config/vim/bundle/matchit"]
 	path = config/vim/bundle/matchit
 	url = https://github.com/tmhedberg/matchit.git
