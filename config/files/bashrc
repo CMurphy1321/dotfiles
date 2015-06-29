@@ -1,5 +1,3 @@
-source ~/.bash_prompt
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -23,13 +21,11 @@ xterm*|rxvt*)
     ;;
 esac
 
-uname='uname'
-if [[ "$uname" == 'Linux' ]]; then
-    . /etc/profile.d/vte.sh
-    alias open='xdg-open'
-fi
+. /etc/profile.d/vte.sh
+alias open='xdg-open'
 
 alias la='ls -a'
 alias ll='ls -l'
 
+source ~/.bash_prompt
 set -o vi
