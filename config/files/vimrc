@@ -64,6 +64,8 @@ set wildmenu
 "Keep current buffer at the top for sp, left for vsp
 set splitbelow
 set splitright
+nnoremap <silent> <TAB> :tabn<Cr>
+nnoremap <silent> <S-TAB> :tabp<Cr>
 
 "Colorscheme
 set t_Co=256
@@ -97,10 +99,7 @@ vnoremap <Leader>te :Tab /=<CR>
 vnoremap <Leader>tc :Tab /:<CR>
 
 "Clear search highlight
-nmap <Leader>/ :nohlsearch<CR>
-
-"Toggle colorcolumn
-nnoremap <Leader>c :exec 'set' (&colorcolumn ==# '') ? 'colorcolumn=+1' : 'colorcolumn='<CR>
+nmap <silent> <Leader>/ :nohlsearch<CR>
 
 "Compile, view latex commands
 nnoremap <Leader>lw :w<CR> :Latexmk<CR>
@@ -119,20 +118,8 @@ noremap <F1> <NOP>
 noremap! <F1> <NOP>
 
 "Remap tab to change tab levels in visual mode
-nnoremap <TAB> :tabn<Cr>
-nnoremap <S-TAB> :tabp<Cr>
 vnoremap <TAB> >
 vnoremap <S-TAB> <
-
-"Make text scolling constant
-" nnoremap j gj
-" nnoremap k gk
-" nnoremap gj j
-" nnoremap gk k
-
-"Allow writing even if you forgot to sudo
-cmap w!! w !sudo tee % >/dev/null
-cmap x!! x !sudo tee % >/dev/null
 
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
