@@ -25,3 +25,6 @@
 [submodule "config/vim/bundle/vim-commentary"]
 	path = config/vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "config/vim/bundle/vim-repeat"]
+	path = config/vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
