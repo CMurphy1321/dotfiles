@@ -1,12 +1,8 @@
 dotfiles
 ========
-This is my repository for configuration files related to unix. The setup file
-will remove current instances of vimrc, inputrc, bashrc and ssh config files then
-link the config files in this repository to the corresponding places in your
-home folder. This includes my vim folder which contains my vim plugins and
-colorschemes. It will initialize and update the plugin submodules as well as
-compile and install YCM for you if it has not been setup already. If YCM does
-not get installed properly, please refer to below.
+This is my repository for configuration files related to unix. Running make will remove current instances of various configuration files then link the corresponding files in this repository to your home folder. This includes my vim folder which contains my vim plugins and colorschemes. It will initialize and update the vim plugin submodules as well as compile and install YCM for you. If YCM does not get installed properly, please refer to below.
+
+The lite branch is aimed to be more friendly to remote servers which may have limited or outdated resources. If you notice any issues, feel free to submit them.
 
 YCM Installation
 ========
