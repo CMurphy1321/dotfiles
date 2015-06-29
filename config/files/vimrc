@@ -28,6 +28,9 @@ set scrolloff=3
 
 "Show line, column number
 set ruler
+set laststatus=2
+set showtabline=1
+set display+=lastline
 
 "Make sure backspace works like you'd expect
 set backspace=indent,eol,start
@@ -58,10 +61,13 @@ set showmatch
 set incsearch
 set hlsearch
 set wildignorecase
+set wildmenu
 
 "Keep current buffer at the top for sp, left for vsp
 set splitbelow
 set splitright
+nnoremap <silent> <TAB> :tabn<Cr>
+nnoremap <silent> <S-TAB> :tabp<Cr>
 
 "Colorscheme
 set t_Co=256
