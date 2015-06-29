@@ -4,3 +4,24 @@
 [submodule "config/vim/bundle/SpaceHighlight"]
 	path = config/vim/bundle/SpaceHighlight
 	url = https://github.com/CMurphy1321/SpaceHighlight
+[submodule "config/vim/bundle/rainbow_parenetheses"]
+	path = config/vim/bundle/rainbow_parenetheses
+	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "config/vim/bundle/matchit"]
+	path = config/vim/bundle/matchit
+	url = https://github.com/tmhedberg/matchit.git
+[submodule "config/vim/bundle/vim-surround"]
+	path = config/vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "config/vim/bundle/vim-abolish"]
+	path = config/vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
+[submodule "config/vim/bundle/vim-commentary"]
+	path = config/vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "config/vim/bundle/vim-repeat"]
+	path = config/vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "config/vim/bundle/tabular"]
+	path = config/vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
