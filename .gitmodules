@@ -1,0 +1,6 @@
+[submodule "config/vim/autoload/vim-pathogen"]
+	path = config/vim/autoload/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule "config/vim/bundle/SpaceHighlight"]
+	path = config/vim/bundle/SpaceHighlight
+	url = https://github.com/CMurphy1321/SpaceHighlight

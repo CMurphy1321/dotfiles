@@ -3,6 +3,7 @@ let mapleader=","
 let maplocalleader=","
 nmap \ <Leader><Leader>
 syntax on
+execute pathogen#infect()
 filetype plugin indent on
 
 "Dont use LaTeXBox indents
