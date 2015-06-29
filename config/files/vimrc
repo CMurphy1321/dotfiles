@@ -2,6 +2,8 @@ set nocompatible
 let mapleader=","
 let maplocalleader=","
 nmap \ <Leader><Leader>
+execute pathogen#infect()
+syntax on
 filetype plugin indent on
 
 "Dont use LaTeXBox indents
