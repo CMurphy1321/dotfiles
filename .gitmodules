@@ -28,3 +28,6 @@
 [submodule "config/vim/bundle/vim-repeat"]
 	path = config/vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "config/vim/bundle/vim-obsession"]
+	path = config/vim/bundle/vim-obsession
+	url = https://github.com/tpope/vim-obsession.git
