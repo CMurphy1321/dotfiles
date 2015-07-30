@@ -13,6 +13,7 @@ clean:
 	rm -f $(HOME)/.bashrc
 	rm -f $(HOME)/.bash_prompt
 	rm -f $(HOME)/.bash_profile
+	rm -f $(HOME)/.cshrc
 	rm -f $(HOME)/.inputrc
 
 link:
