@@ -24,4 +24,4 @@
 	url = https://github.com/tpope/vim-surround.git
 [submodule "config/vim/bundle/SpaceHighlight"]
 	path = config/vim/bundle/SpaceHighlight
-	url = git@github.com:CMurphy1321/SpaceHighlight
+	url = https://github.com/CMurphy1321/SpaceHighlight.git
