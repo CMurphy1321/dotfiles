@@ -65,7 +65,7 @@ set splitright
 "Colorscheme
 set t_Co=256
 set background=dark
-colorscheme neonwave
+colorscheme idle
 
 "Yank to clipboard
 if has ('macunix')
