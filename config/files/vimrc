@@ -12,6 +12,8 @@ let g:tex_indent_brace = 0
 "Only show quickfix buffer on errors, not warnings
 let g:LatexBox_quickfix = 4
 
+let g:ycm_global_ycm_extra_conf = 'path to .ycm_extra_conf.py'
+
 "Keep persistent undo trees
 if has('persistent_undo')
     set undodir=$HOME/.vim/vimundo
