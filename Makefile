@@ -33,5 +33,5 @@ ycm:
 	@if [ -f $(shell pwd)/config/vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]; then \
 		echo "YouCompleteMe is already compiled."; \
 	else \
-		cd $(shell pwd)/config/vim/bundle/YouCompleteMe/ && ./install.sh --clang-completer; \
+		mkdir -p ycmbuild && cd ycmbuild && cmake -G "Unix Makefiles" . $(shell pwd)/config/vim/bundle/YouCompleteMe/third_party/ycmd/cpp && make ycm_support_libs -j$(shell grep -c ^processor /proc/cpuinfo); \
 	fi
