@@ -50,8 +50,11 @@ set autoindent
 
 "Set text width to 79
 "Wrap after tw
-set tw=79
-set formatoptions+=w
+" set tw=79
+" set formatoptions+=w
+
+"Highlight characters that exit in column 81.
+call matchadd('ColorColumn','\%81v',255)
 
 "A few misc things
 syntax on
