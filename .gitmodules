@@ -28,3 +28,6 @@
 [submodule "config/vim/bundle/vim-obsession"]
 	path = config/vim/bundle/vim-obsession
 	url = https://github.com/tpope/vim-obsession.git
+[submodule "config/vim/bundle/vim-indent-object"]
+	path = config/vim/bundle/vim-indent-object
+	url = https://github.com/michaeljsmith/vim-indent-object.git
