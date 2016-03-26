@@ -21,7 +21,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-. /etc/profile.d/vte.sh
 alias open='xdg-open'
 
 alias la='ls -a'
