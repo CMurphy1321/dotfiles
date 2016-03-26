@@ -23,6 +23,7 @@ set completeopt-=preview
 
 "Number lines
 set relativenumber
+set number
 "Leave 3 lines above, below cursor
 set scrolloff=3
 
@@ -34,10 +35,6 @@ set display+=lastline
 
 "Make sure backspace works like you'd expect
 set backspace=indent,eol,start
-
-"Save,load folds automatically
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
 
 "Tab formatting
 "4 spaces per tab
