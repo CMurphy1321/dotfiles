@@ -19,9 +19,6 @@
 [submodule "config/vim/bundle/SpaceHighlight"]
 	path = config/vim/bundle/SpaceHighlight
 	url = https://github.com/CMurphy1321/SpaceHighlight.git
-[submodule "config/vim/bundle/vim-abolish"]
-	path = config/vim/bundle/vim-abolish
-	url = https://github.com/tpope/vim-abolish.git
 [submodule "config/vim/bundle/vim-commentary"]
 	path = config/vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
