@@ -96,6 +96,9 @@ nnoremap <silent> <leader>W :%s/\s\+$//e <bar> nohlsearch<CR>
 "Use with caution
 nnoremap <Leader>F gqip :%s/\s\+$//e <bar> nohlsearch <CR><C-o>
 
+"Use semicolon to enter commands
+nnoremap ; :
+
 "Toggle Tab Highlighting
 map <Leader>t :ToggleTabHi<CR>
 
