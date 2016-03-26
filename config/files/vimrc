@@ -72,7 +72,7 @@ nnoremap <silent> <S-TAB> :tabp<Cr>
 "Colorscheme
 set t_Co=256
 set background=dark
-colorscheme neonwave
+colorscheme molokai
 
 "Yank to clipboard
 if has ('macunix')
