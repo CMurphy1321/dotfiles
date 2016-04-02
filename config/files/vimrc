@@ -99,6 +99,9 @@ map <Leader>w :ToggleSpaceHi<CR>
 "Toggle spelling
 nnoremap <Leader>s :set spell!<CR>
 
+"Save and put vim in the background
+nnoremap <leader>z :w<CR><C-z>
+
 "Align in visual
 vnoremap <Leader>te :Tab /=<CR>
 vnoremap <Leader>tc :Tab /:<CR>
