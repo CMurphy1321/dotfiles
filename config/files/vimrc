@@ -97,7 +97,7 @@ map <Leader>t :ToggleTabHi<CR>
 map <Leader>w :ToggleSpaceHi<CR>
 
 "Toggle spelling
-nnoremap <Leader>z :set spell!<CR>
+nnoremap <Leader>s :set spell!<CR>
 
 "Align in visual
 vnoremap <Leader>te :Tab /=<CR>
