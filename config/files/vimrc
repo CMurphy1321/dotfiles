@@ -4,6 +4,7 @@ let maplocalleader=","
 nmap \ <Leader><Leader>
 filetype plugin indent on
 execute pathogen#infect()
+set tags=./tags;/
 
 "Dont use LaTeXBox indents
 let g:LatexBox_custom_indent = 0
