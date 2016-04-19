@@ -10,6 +10,10 @@ set tags=./.tags;/
 let g:LatexBox_custom_indent = 0
 let g:tex_indent_brace = 0
 
+"Make views automatic
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
 "Only show quickfix buffer on errors, not warnings
 let g:LatexBox_quickfix = 4
 
