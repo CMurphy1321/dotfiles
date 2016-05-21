@@ -21,10 +21,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-alias open='xdg-open'
-
-alias la='ls -a'
-alias ll='ls -l'
-
 source ~/.bash_prompt
+source ~/.bash_aliases
 set -o vi
