@@ -1,13 +1,26 @@
-# ~/.bashrc
-#
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias open='xdg-open'
-alias la='ls -a'
-alias ll='ls -l'
-alias smake='make -j$(shell grep -c ^processor /proc/cpuinfo);'
+# Show activity in titlebar
+case "$TERM" in
+xterm*|rxvt*)
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+    show_command_in_title_bar()
+    {
+        case "$BASH_COMMAND" in
+            *\033]0*)
+            ;;
+            *)
+                echo -ne "\033]0;${USER}@${HOSTNAME}: ${BASH_COMMAND}\007"
+                ;;
+        esac
+    }
+    trap show_command_in_title_bar DEBUG
+    ;;
+*)
+    ;;
+esac
 
 source ~/.bash_prompt
-
+source ~/.bash_aliases
 set -o vi

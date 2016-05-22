@@ -2,13 +2,17 @@ set nocompatible
 let mapleader=","
 let maplocalleader=","
 nmap \ <Leader><Leader>
-syntax on
 execute pathogen#infect()
 filetype plugin indent on
+set tags=./.tags;/
 
 "Dont use LaTeXBox indents
 let g:LatexBox_custom_indent = 0
 let g:tex_indent_brace = 0
+
+"Make views automatic
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
 
 "Only show quickfix buffer on errors, not warnings
 let g:LatexBox_quickfix = 4
@@ -23,6 +27,7 @@ endif
 set completeopt-=preview
 
 "Number lines
+set relativenumber
 set number
 "Leave 3 lines above, below cursor
 set scrolloff=3
@@ -36,10 +41,6 @@ set display+=lastline
 "Make sure backspace works like you'd expect
 set backspace=indent,eol,start
 
-"Save,load folds automatically
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
-
 "Tab formatting
 "4 spaces per tab
 set softtabstop=4
@@ -51,8 +52,11 @@ set autoindent
 
 "Set text width to 79
 "Wrap after tw
-set tw=79
-set formatoptions+=w
+" set tw=79
+" set formatoptions+=w
+
+"Highlight characters that exit in column 81.
+call matchadd('ColorColumn','\%81v',255)
 
 "A few misc things
 syntax on
@@ -61,6 +65,7 @@ set ic
 set showmatch
 set incsearch
 set hlsearch
+set wildignorecase
 set wildmenu
 
 "Keep current buffer at the top for sp, left for vsp
@@ -72,7 +77,7 @@ nnoremap <silent> <S-TAB> :tabp<Cr>
 "Colorscheme
 set t_Co=256
 set background=dark
-colorscheme neonwave
+colorscheme molokai
 
 "Yank to clipboard
 if has ('macunix')
@@ -80,18 +85,15 @@ if has ('macunix')
     vnoremap y ygv"*y
 endif
 
-"Start with rainbow parenthesis on
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
 "Remove trailing whitespace
-nnoremap <leader>W :%s/\s\+$//e <bar> nohlsearch<CR>
+nnoremap <silent> <leader>W :%s/\s\+$//e <bar> nohlsearch<CR>
 
 "Reformat current paragraph
 "Use with caution
 nnoremap <Leader>F gqip :%s/\s\+$//e <bar> nohlsearch <CR><C-o>
+
+"Use semicolon to enter commands
+nnoremap ; :
 
 "Toggle Tab Highlighting
 map <Leader>t :ToggleTabHi<CR>
@@ -100,21 +102,21 @@ map <Leader>t :ToggleTabHi<CR>
 map <Leader>w :ToggleSpaceHi<CR>
 
 "Toggle spelling
-nnoremap <Leader>z :set spell!<CR>
+nnoremap <Leader>s :set spell!<CR>
+
+"Save and put vim in the background
+nnoremap <leader>z :w<CR><C-z>
 
 "Align in visual
 vnoremap <Leader>te :Tab /=<CR>
 vnoremap <Leader>tc :Tab /:<CR>
-
-"Toggle rainbow parentheses
-nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 
 "Clear search highlight
 nmap <silent> <Leader>/ :nohlsearch<CR>
 
 "Compile, view latex commands
 nnoremap <Leader>lw :w<CR> :Latexmk<CR>
-nnoremap <Leader>vv :w<CR> :Latexmk<CR> :LatexView<CR>
+nnoremap <Leader>vv :w<CR> :Latexmk<CR> :!open *.pdf<CR><CR>
 
 "Easily switch sp to vsp
 nnoremap <Leader>vs <C-w>t<C-w>K
@@ -148,3 +150,17 @@ vnoremap <silent> # :<C-U>
     \gvy?<C-R><C-R>=substitute(
     \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
     \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction

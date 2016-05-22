@@ -4,6 +4,6 @@
 [core]
     editor = vim
 [push]
-    default = matching
+    default = simple
 [color]
     ui = auto

@@ -15,6 +15,7 @@ clean:
 	rm -f $(HOME)/.bash_profile
 	rm -f $(HOME)/.cshrc
 	rm -f $(HOME)/.inputrc
+	rm -f $(HOME)/.gitconfig
 
 link:
 	@make clean
