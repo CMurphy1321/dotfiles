@@ -1,6 +1,8 @@
 if [[ ! `uname` == *"Darwin"* ]]; then
     alias open='xdg-open'
 fi
+alias python='python3'
+alias pip='pip3'
 alias la='ls -aF'
 alias ll='ls -alF'
 
