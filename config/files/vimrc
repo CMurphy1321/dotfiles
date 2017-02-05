@@ -85,6 +85,9 @@ if has ('macunix')
     vnoremap y ygv"*y
 endif
 
+"Automatically follow directory
+" set autochdir
+
 "Remove trailing whitespace
 nnoremap <silent> <leader>W :%s/\s\+$//e <bar> nohlsearch<CR>
 
@@ -146,8 +149,6 @@ vnoremap <S-TAB> <
 "Allow writing even if you forgot to sudo
 cmap w!! w !sudo tee % >/dev/null
 cmap x!! x !sudo tee % >/dev/null
-
-set autochdir
 
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
