@@ -119,7 +119,7 @@ nnoremap <Leader>c :exec 'set' (&colorcolumn ==# '') ? 'colorcolumn=+1' : 'color
 
 "Compile, view latex commands
 nnoremap <Leader>lw :w<CR> :Latexmk<CR>
-nnoremap <Leader>vv :w<CR> :Latexmk<CR> :!open *.pdf<CR><CR>
+nnoremap <Leader>vv :w<CR> :Latexmk<CR> :!open expand('%:r').".pdf"<CR><CR>
 
 "Easily switch sp to vsp
 nnoremap <Leader>vs <C-w>t<C-w>K
