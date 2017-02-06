@@ -13,18 +13,12 @@ filetype plugin indent on
 "Run pathogen
 execute pathogen#infect()
 
-"Dont use LaTeXBox indents
-let g:LatexBox_custom_indent = 0
-let g:tex_indent_brace = 0
 "include .tags
 set tags=./.tags;/
 
 "Make views automatic
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
-
-"Only show quickfix buffer on errors, not warnings
-let g:LatexBox_quickfix = 4
 
 "Keep persistent undo trees
 if has('persistent_undo')
@@ -88,12 +82,6 @@ set t_Co=256
 set background=dark
 colorscheme molokai
 
-"Yank to clipboard
-if has ('macunix')
-    nnoremap yy yy"*yy
-    vnoremap y ygv"*y
-endif
-
 "Automatically follow directory
 " set autochdir
 
@@ -125,10 +113,6 @@ nmap <Leader>/ :nohlsearch<CR>
 
 "Toggle colorcolumn
 nnoremap <Leader>c :exec 'set' (&colorcolumn ==# '') ? 'colorcolumn=+1' : 'colorcolumn='<CR>
-
-"Compile, view latex commands
-nnoremap <Leader>lw :w<CR> :Latexmk<CR>
-nnoremap <Leader>vv :w<CR> :Latexmk<CR> :!open expand('%:r').".pdf"<CR><CR>
 
 "Easily switch sp to vsp
 nnoremap <Leader>vs <C-w>t<C-w>K
