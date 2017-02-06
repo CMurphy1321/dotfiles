@@ -1,14 +1,23 @@
-set nocompatible
+"Leader mappings
 let mapleader=","
 let maplocalleader=","
 nmap \ <Leader><Leader>
+
+set nocompatible
+"Use semicolon to enter commands
+nnoremap ; :
+"Disable EX mode
+noremap Q <NOP>
 filetype plugin indent on
+
+"Run pathogen
 execute pathogen#infect()
-set tags=./.tags;/
 
 "Dont use LaTeXBox indents
 let g:LatexBox_custom_indent = 0
 let g:tex_indent_brace = 0
+"include .tags
+set tags=./.tags;/
 
 "Make views automatic
 autocmd BufWinLeave *.* mkview
@@ -95,9 +104,6 @@ nnoremap <silent> <leader>W :%s/\s\+$//e <bar> nohlsearch<CR>
 "Use with caution
 nnoremap <Leader>F gqip :%s/\s\+$//e <bar> nohlsearch <CR><C-o>
 
-"Use semicolon to enter commands
-nnoremap ; :
-
 "Toggle Tab Highlighting
 map <Leader>t :ToggleTabHi<CR>
 
@@ -128,9 +134,6 @@ nnoremap <Leader>vv :w<CR> :Latexmk<CR> :!open expand('%:r').".pdf"<CR><CR>
 nnoremap <Leader>vs <C-w>t<C-w>K
 "Easily switch vsp to sp
 nnoremap <Leader>sv <C-w>t<C-w>H
-
-"Disable EX mode
-noremap Q <NOP>
 
 "Disable help
 noremap <F1> <NOP>
