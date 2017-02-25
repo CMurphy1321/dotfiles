@@ -17,8 +17,12 @@ execute pathogen#infect()
 set tags=./.tags;/
 
 "Make views automatic
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+autocmd BufWinEnter * silent loadview
+autocmd BufWinLeave * mkview
+
+"Automatically remove trailing whitespace
+autocmd BufWinEnter * %s/\s\+$//e
+autocmd BufWritePre * %s/\s\+$//e
 
 "Keep persistent undo trees
 if has('persistent_undo')
