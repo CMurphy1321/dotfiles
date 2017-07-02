@@ -4,13 +4,15 @@ let maplocalleader=","
 nmap \ <Leader><Leader>
 
 set nocompatible
+"
 "Use semicolon to enter commands
 nnoremap ; :
+
 "Disable EX mode
 noremap Q <NOP>
-filetype plugin indent on
 
 "Run pathogen
+filetype plugin indent on
 execute pathogen#infect()
 
 "include .tags
@@ -30,19 +32,18 @@ if has('persistent_undo')
     set undofile
 endif
 
-"Don't show scratch preview
-set completeopt-=preview
-
 "Number lines
 set relativenumber
-set number
 "Leave 3 lines above, below cursor
 set scrolloff=3
 
 "Show line, column number
 set ruler
+"Always show status line
 set laststatus=2
+"Show tab line when 2 or more tabs are open
 set showtabline=1
+"Don't show "@" symbols when lines don't fit
 set display+=lastline
 
 "Make sure backspace works like you'd expect
@@ -51,39 +52,27 @@ set backspace=indent,eol,start
 "Tab formatting
 "4 spaces per tab
 set softtabstop=4
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set autoindent
-"set smartindent
-
-"Set text width to 79
-"Wrap after tw
-" set tw=79
-" set formatoptions+=w
+"4 spaces when indenting
+set shiftwidth=4 tabstop=4 expandtab
+"Smart indenting stuff
+set autoindent smartindent
 
 "Highlight characters that exit in column 81.
 call matchadd('ColorColumn','\%81v',255)
 
 "A few misc things
 syntax on
-set smartcase
-set ic
-set showmatch
-set incsearch
-set hlsearch
-set wildignorecase
-set wildmenu
+set smartcase ignorecase showmatch incsearch hlsearch wildignorecase wildmenu
 
 "Keep current buffer at the top for sp, left for vsp
-set splitbelow
-set splitright
+set splitbelow splitright
+
+"Let tab, shift+tab indent and unindent
 nnoremap <silent> <TAB> :tabn<Cr>
 nnoremap <silent> <S-TAB> :tabp<Cr>
 
 "Colorscheme
-set t_Co=256
-set background=dark
+set background=dark t_Co=256
 colorscheme molokai
 
 "Automatically follow directory
@@ -132,39 +121,11 @@ vnoremap <TAB> >
 vnoremap <S-TAB> <
 
 "Make text scolling constant
-" nnoremap j gj
-" nnoremap k gk
-" nnoremap gj j
-" nnoremap gk k
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 "Allow writing even if you forgot to sudo
 cmap w!! w !sudo tee % >/dev/null
 cmap x!! x !sudo tee % >/dev/null
-
-if filereadable(expand("$HOME/.vimrc.local"))
-    source $HOME/.vimrc.local
-endif
-
-"Search for selected text, forwards or backwards.
-vnoremap <silent> * :<C-U>
-    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-    \gvy/<C-R><C-R>=substitute(
-    \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-    \gV:call setreg('"', old_reg, old_regtype)<CR>
-
-vnoremap <silent> # :<C-U>
-    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-    \gvy?<C-R><C-R>=substitute(
-    \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-    \gV:call setreg('"', old_reg, old_regtype)<CR>
-
-"Allow Ctrl+Shift+v to set paste, paste, set nopaste
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
