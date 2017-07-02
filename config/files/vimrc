@@ -3,8 +3,10 @@ let mapleader=","
 let maplocalleader=","
 nmap \ <Leader><Leader>
 
-set nocompatible
-"
+if &compatible
+    set nocompatible
+endif
+
 "Use semicolon to enter commands
 nnoremap ; :
 
