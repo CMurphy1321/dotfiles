@@ -81,7 +81,7 @@ colorscheme molokai
 " set autochdir
 
 "Remove trailing whitespace
-nnoremap <silent> <leader>W :%s/\s\+$//e <bar> nohlsearch<CR>
+nnoremap <silent> <leader>W :%s/\s\+$//e <bar> nohlsearch <bar> echo "Remove trailing whitespace"<CR>
 
 "Reformat current paragraph
 "Use with caution
