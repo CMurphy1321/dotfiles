@@ -23,6 +23,8 @@ link:
 		ln -sf $(realpath $(shell pwd))/config/files/$$config $(HOME)/.$$config; \
 	done
 	@ln -sf $(shell pwd)/config/vim $(HOME)/.vim
+	@mkdir -p $(HOME)/.config/nvim
+	@ln -sf $(shell pwd)/config/init.vim $(HOME)/.config/nvim/init.vim
 	@echo "Everything is relinked!"
 
 submodules:
