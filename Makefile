@@ -24,7 +24,7 @@ link:
 	done
 	@ln -sf $(shell pwd)/config/vim $(HOME)/.vim
 	@mkdir -p $(HOME)/.config/nvim
-	@ln -sf $(shell pwd)/config/init.vim $(HOME)/.config/nvim/init.vim
+	@ln -sf $(shell pwd)/config/files/init.vim $(HOME)/.config/nvim/init.vim
 	@echo "Everything is relinked!"
 
 submodules:
