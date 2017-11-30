@@ -19,3 +19,7 @@ set laststatus=2
 set showtabline=1
 
 nnoremap <silent> <leader>W :%s/\s\+$//e <bar> nohlsearch <bar> echo "Remove trailing whitespace"<CR>
+"
+"Remap tab to change tab levels in visual mode
+vnoremap <TAB> >
+vnoremap <S-TAB> <
