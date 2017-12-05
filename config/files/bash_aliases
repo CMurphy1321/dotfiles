@@ -5,6 +5,7 @@ alias python='python3'
 alias pip='pip3'
 alias la='ls -aF'
 alias ll='ls -alF'
+alias gs='git status'
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
