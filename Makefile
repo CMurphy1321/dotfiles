@@ -26,7 +26,7 @@ link:
 	@ln -sf $(shell pwd)/config/vim $(HOME)/.vim
 	@ln -sf $(shell pwd)/config/nvim $(HOME)/.config/nvim
 	@mkdir -p $(HOME)/.config/nvim
-	@echo "Everything is relinked!"
+	echo "Everything is relinked!"
 
 submodules:
 	@git submodule init && git submodule update --init --recursive
