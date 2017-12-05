@@ -8,13 +8,14 @@ all:
 	@echo "All done! Enjoy :)"
 
 clean:
-	rm -rf $(HOME)/.vim
-	rm -f $(HOME)/.vimrc
-	rm -f $(HOME)/.bashrc
-	rm -f $(HOME)/.bash_prompt
-	rm -f $(HOME)/.bash_profile
-	rm -f $(HOME)/.inputrc
-	rm -f $(HOME)/.gitconfig
+	@rm -rf $(HOME)/.vim
+	@rm -rf $(HOME)/.config/nvim
+	@rm -f $(HOME)/.vimrc
+	@rm -f $(HOME)/.bashrc
+	@rm -f $(HOME)/.bash_prompt
+	@rm -f $(HOME)/.bash_profile
+	@rm -f $(HOME)/.inputrc
+	@rm -f $(HOME)/.gitconfig
 
 link:
 	@make clean

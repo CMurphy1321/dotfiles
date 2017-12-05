@@ -34,3 +34,9 @@
 [submodule "config/vim/bundle/ctrlp.vim"]
 	path = config/vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "config/nvim/bundle/vim-surround"]
+	path = config/nvim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "config/nvim/bundle/vim-commentary"]
+	path = config/nvim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git

@@ -6,6 +6,10 @@ nmap \ <Leader><Leader>
 "Use semicolon to enter commands
 nnoremap ; :
 
+"Run pathogen
+filetype plugin indent on
+execute pathogen#infect()
+
 "Number lines
 set relativenumber
 "Leave 3 lines above, below cursor
