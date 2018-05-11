@@ -22,6 +22,10 @@ set laststatus=2
 "Show tab line when 2 or more tabs are open
 set showtabline=1
 
+"A few misc things
+syntax on
+set smartcase ignorecase showmatch incsearch hlsearch wildignorecase wildmenu
+
 nnoremap <silent> <leader>W :%s/\s\+$//e <bar> nohlsearch <bar> echo "Remove trailing whitespace"<CR>
 "
 "Remap tab to change tab levels in visual mode
