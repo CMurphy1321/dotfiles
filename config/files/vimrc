@@ -75,7 +75,7 @@ nnoremap <silent> <S-TAB> :tabp<Cr>
 
 "Colorscheme
 set background=dark t_Co=256
-colorscheme molokai
+colorscheme onehalfdark
 
 "Automatically follow directory
 " set autochdir
