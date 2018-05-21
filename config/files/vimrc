@@ -125,8 +125,8 @@ vnoremap <TAB> >
 vnoremap <S-TAB> <
 
 "Make text scolling constant
-" nnoremap j gj
-" nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 " nnoremap gj j
 " nnoremap gk k
 

@@ -10,6 +10,7 @@ all:
 clean:
 	@rm -rf $(HOME)/.vim
 	@rm -rf $(HOME)/.config/nvim
+	@rm -rf $(HOME)/.config/ranger
 	@rm -f $(HOME)/.vimrc
 	@rm -f $(HOME)/.bashrc
 	@rm -f $(HOME)/.bash_prompt
@@ -25,6 +26,7 @@ link:
 	done
 	@ln -sf $(shell pwd)/config/vim $(HOME)/.vim
 	@ln -sf $(shell pwd)/config/nvim $(HOME)/.config/nvim
+	@ln -sf $(shell pwd)/config/ranger $(HOME)/.config/ranger
 	@mkdir -p $(HOME)/.config/nvim
 	echo "Everything is relinked!"
 
