@@ -21,8 +21,8 @@ execute pathogen#infect()
 set tags=./.tags;/
 
 "Make views automatic
-autocmd BufWinEnter * silent loadview
-autocmd BufWinLeave * mkview
+" autocmd BufWinEnter * silent loadview
+" autocmd BufWinLeave * mkview
 "
 "Automatically remove trailing whitespace
 " autocmd BufWinEnter * %s/\s\+$//e
