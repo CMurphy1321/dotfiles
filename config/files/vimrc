@@ -37,6 +37,7 @@ if has('persistent_undo')
 endif
 
 "Number lines
+set number
 set relativenumber
 "Leave 3 lines above, below cursor
 set scrolloff=3
