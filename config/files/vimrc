@@ -56,9 +56,9 @@ set backspace=indent,eol,start
 
 "Tab formatting
 "4 spaces per tab
-set softtabstop=4
+set softtabstop=2
 "4 spaces when indenting
-set shiftwidth=4 tabstop=4 expandtab
+set shiftwidth=2 tabstop=2 expandtab
 "Smart indenting stuff
 set autoindent smartindent
 

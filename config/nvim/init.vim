@@ -31,3 +31,9 @@ nnoremap <silent> <leader>W :%s/\s\+$//e <bar> nohlsearch <bar> echo "Remove tra
 "Remap tab to change tab levels in visual mode
 vnoremap <TAB> >
 vnoremap <S-TAB> <
+
+"Tab formatting
+"2 spaces per tab
+set softtabstop=2
+"2 spaces when indenting
+set shiftwidth=2 tabstop=2 expandtab
