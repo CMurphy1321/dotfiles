@@ -9,6 +9,7 @@ endif
 
 "Use semicolon to enter commands
 nnoremap ; :
+vnoremap ; :
 
 "Disable EX mode
 noremap Q <NOP>
