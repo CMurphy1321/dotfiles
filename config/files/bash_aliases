@@ -23,3 +23,5 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+alias cdds='cd ~/.local/share/Steam/steamapps/compatdata/570940/pfx/drive_c/users/steamuser/Documents/NBGI/DARK\ SOULS\ REMASTERED/76943598/'
+alias cdlies='cd ~/.local/share/Steam/steamapps/common/Lies\ of\ P/LiesofP/Saved/SaveGames/76943598'
