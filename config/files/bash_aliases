@@ -12,7 +12,7 @@ alias gd='git diff'
 alias yers='yes'
 alias trustmebro='sudo'
 alias update='echo -e "\n\neos-update --aur...\n\n" && yes | eos-update --aur && echo -e "\n\nUpdating pacman...\n\n" && yes | sudo pacman -Syu'
-alias cdscylla='cd ~/Nextcloud/misc/KeyboardMappings/qmk_userspace/keyboards/'
+alias cdscylla='cd ~/Documents/KeyboardMappings/qmk_userspace/keyboards/'
 alias escylla='cdscylla && vim bastardkb/scylla/keymaps/my_keymap/keymap.c'
 alias fscylla='cdscylla && qmk compile -c -kb bastardkb/scylla/ -km my_keymap && qmk flash -kb bastardkb/scylla/ -km my_keymap'
 
